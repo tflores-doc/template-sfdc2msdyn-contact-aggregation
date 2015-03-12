@@ -58,7 +58,7 @@
     <dependency>
             <groupId>org.mule.modules</groupId>
             <artifactId>mule-module-ms-dynamics-crm</artifactId>
-            <version>2.1.2</version>
+            <version>${msdyn.version}</version>
         </dependency>
     <dependency>
             <groupId>com.mulesoft.muleesb.modules</groupId>
