@@ -1,5 +1,5 @@
 
-# Anypoint Template: MS Dynamics to Salesforce Contact Aggregation
+# Anypoint Template: MS Dynamics and Salesforce Contact Aggregation
 
 + [License Agreement](#licenseagreement)
 + [Use Case](#usecase)
@@ -60,10 +60,25 @@ In order to have this template working as expected, you should be aware of your 
 [1]: https://help.salesforce.com/HTViewHelpDoc?id=checking_field_accessibility_for_a_particular_field.htm&language=en_US
 [2]: https://help.salesforce.com/HTViewHelpDoc?id=modifying_field_access_settings.htm&language=en_US
 
+### As source of data
 
-### As destination of data
+If the user configured in the template for the source system does not have at least *read only* permissions for the fields that are fetched, then a *InvalidFieldFault* API fault will show up.
 
-There are no particular considerations for this Anypoint Template regarding Salesforce as data destination.
+```
+java.lang.RuntimeException: [InvalidFieldFault [ApiQueryFault [ApiFault  exceptionCode='INVALID_FIELD'
+exceptionMessage='
+Account.Phone, Account.Rating, Account.RecordTypeId, Account.ShippingCity
+^
+ERROR at Row:1:Column:486
+No such column 'RecordTypeId' on entity 'Account'. If you are attempting to use a custom field, be sure to append the '__c' after the custom field name. Please reference your WSDL or the describe call for the appropriate names.'
+]
+row='1'
+column='486'
+]
+]
+```
+
+
 
 
 
@@ -71,14 +86,14 @@ There are no particular considerations for this Anypoint Template regarding Sale
 
 ## Microsoft Dynamics CRM Considerations <a name="msdynamicsconsiderations"/>
 
-### As source of data
 
-There are no particular considerations for this Anypoint Template regarding Microsoft Dynamics CRM as data origin.
+### As destination of data
 
+There are no particular considerations for this Anypoint Template regarding Microsoft Dynamics CRM as data destination.
 
 
 # Run it! <a name="runit"/>
-Simple steps to get MS Dynamics to Salesforce Contact Aggregation running.
+Simple steps to get MS Dynamics and Salesforce Contact Aggregation running.
 In any of the ways you would like to run this Anypoint Template, here is an example of the output you'll see after hitting the HTTP endpoint:
 
 <br>Please find attached your Contacts Report</br>
@@ -135,10 +150,10 @@ In order to use this Mule Anypoint Template you need to configure properties (Cr
 + http.port `9090` 
 
 ### Salesforce Connector configuration for company A
-+ sfdc.a.username `bob.dylan@orga`
-+ sfdc.a.password `DylanPassword123`
-+ sfdc.a.securityToken `avsfwCUl7apQs56Xq2AKi3X`
-+ sfdc.a.url `https://login.salesforce.com/services/Soap/u/26.0`
++ sfdc.username `bob.dylan@orga`
++ sfdc.password `DylanPassword123`
++ sfdc.securityToken `avsfwCUl7apQs56Xq2AKi3X`
++ sfdc.url `https://login.salesforce.com/services/Soap/u/26.0`
 
 ### MS Dynamics Connector configuration for company B
 + msdyn.user `user@yourorg.onmicrosoft.com`
