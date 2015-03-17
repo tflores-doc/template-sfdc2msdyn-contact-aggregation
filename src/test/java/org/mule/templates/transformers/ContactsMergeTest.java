@@ -22,7 +22,7 @@ import org.mule.api.transformer.TransformerException;
 
 @SuppressWarnings("deprecation")
 @RunWith(MockitoJUnitRunner.class)
-public class SFDCContactsMergeTest {
+public class ContactsMergeTest {
 	
 	@Mock
 	private MuleContext muleContext;

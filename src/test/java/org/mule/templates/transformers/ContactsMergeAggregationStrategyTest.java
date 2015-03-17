@@ -26,7 +26,7 @@ import com.google.common.collect.Lists;
 
 @SuppressWarnings({ "unchecked", "deprecation" })
 @RunWith(MockitoJUnitRunner.class)
-public class SFDCContactsMergeAggregationStrategyTest extends AbstractTemplateTestCase {
+public class ContactsMergeAggregationStrategyTest extends AbstractTemplateTestCase {
 	
 	@Mock
 	private MuleContext muleContext;
@@ -34,8 +34,8 @@ public class SFDCContactsMergeAggregationStrategyTest extends AbstractTemplateTe
 	
 	@Test
 	public void testAggregate() throws Exception {
-		List<Map<String, String>> contactsA = SFDCContactsMergeTest.createLists("A", 0, 1);
-		List<Map<String, String>> contactsB = SFDCContactsMergeTest.createLists("B", 1, 2);
+		List<Map<String, String>> contactsA = ContactsMergeTest.createLists("A", 0, 1);
+		List<Map<String, String>> contactsB = ContactsMergeTest.createLists("B", 1, 2);
 		
 		MuleEvent testEventA = getTestEvent("");
 		MuleEvent testEventB = getTestEvent("");
@@ -53,7 +53,7 @@ public class SFDCContactsMergeAggregationStrategyTest extends AbstractTemplateTe
 		Iterator<Map<String, String>> iterator = (Iterator<Map<String, String>>) sfdccontactMerge.aggregate(aggregationContext).getMessage().getPayload();
 		List<Map<String, String>> mergedList = Lists.newArrayList(iterator);
 
-		Assert.assertEquals("The merged list obtained is not as expected", SFDCContactsMergeTest.createExpectedList(), mergedList);
+		Assert.assertEquals("The merged list obtained is not as expected", ContactsMergeTest.createExpectedList(), mergedList);
 
 	}
 	

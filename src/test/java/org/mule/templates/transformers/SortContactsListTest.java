@@ -41,7 +41,6 @@ public class SortContactsListTest {
 		System.out.println(sortedList);
 		Assert.assertEquals("The merged list obtained is not as expected",
 				createExpectedList(), sortedList);
-
 	}
 
 	private List<Map<String, String>> createExpectedList() {
