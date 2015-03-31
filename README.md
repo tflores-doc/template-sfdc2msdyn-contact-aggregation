@@ -222,7 +222,7 @@ Criteria and format applied:
 + Contacts will be matched by email, that is to say, a record in MS Dynamics and Salesforce with the same mail is considered as the same contact.
 
 **Format Output Flow**
-+ [Java Transformer](http://www.mulesoft.org/documentation/display/current/Java+Transformer+Reference) responsible for sorting the list of contacts in the following order:
+[Java Transformer](http://www.mulesoft.org/documentation/display/current/Java+Transformer+Reference) responsible for sorting the list of contacts in the following order:
 
 1. Contacts only in Salesforce
 2. Contacts only in MS Dynamics
