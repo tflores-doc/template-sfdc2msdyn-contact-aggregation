@@ -11,7 +11,7 @@ For practical purposes this Template will generate the result in the format of a
 
 This Template should serve as a foundation for extracting data from two systems, aggregating data, comparing values of fields for the objects, and generating a report on the differences. 
 
-As implemented, it gets contacts from Salesforce and MS Dynamics, compares by the email address of the contacts, and generates a CSV file which shows contact name in Salesforce, contact name in MS Dynamics, Email and contacts IDs in Salesforce and MS DYnamics. The report then send the email to a configured group of email addresses.
+As implemented, it gets contacts from Salesforce and MS Dynamics, compares by the email address of the contacts, and generates a CSV file which shows contact name in Salesforce, contact name in MS Dynamics, Email and contacts IDs in Salesforce and MS DYnamics. The report is sent by the email to a configured group of email addresses.
 		</section>
 		<section id="considerations">
 <![CDATA[
