@@ -4,11 +4,13 @@
 	xmlns:http="http://www.mulesoft.org/schema/mule/http" 
 	xmlns="http://www.mulesoft.org/schema/mule/core" 
 	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
-	version="EE-3.6.0" 
+	version="EE-3.6.1" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/smtp http://www.mulesoft.org/schema/mule/smtp/current/mule-smtp.xsd
 http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+
+<!-- In this file you should declare all your inbound endpoints and from here control the access to your application -->
 
     <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="${http.port}" doc:name="HTTP Listener Configuration"/>
     <flow name="endpointsFlow">
@@ -17,8 +19,6 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
         </http:listener>
         <flow-ref name="mainFlow" doc:name="Call mainFlow" doc:description="mainFlow"/>
     </flow>
-
-	<!-- 	In this file you should declare all your inbound endpoints and from here control the access to your application -->
 
     
       <flow name="outboundFlow"  doc:description="This is the simpliest output point to push the result of the data processing. 
