@@ -61,12 +61,6 @@
             <version>${msdyn.version}</version>
         </dependency>
     <dependency>
-            <groupId>com.mulesoft.weave</groupId>
-            <artifactId>mule-plugin-weave_2.11</artifactId>
-            <version>1.0.0-RC2-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-    <dependency>
             <groupId>org.mule.modules</groupId>
             <artifactId>mule-module-spring-config</artifactId>
             <version>${mule.version}</version>
