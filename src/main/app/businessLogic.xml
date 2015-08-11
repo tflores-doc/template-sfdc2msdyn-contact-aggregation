@@ -4,7 +4,7 @@
 xmlns:sfdc="http://www.mulesoft.org/schema/mule/sfdc"
 xmlns="http://www.mulesoft.org/schema/mule/core" 
 xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
-version="EE-3.7.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+version="EE-3.7.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/sfdc http://www.mulesoft.org/schema/mule/sfdc/current/mule-sfdc.xsd
 http://www.mulesoft.org/schema/mule/dynamicscrm http://www.mulesoft.org/schema/mule/dynamicscrm/current/mule-dynamicscrm.xsd
@@ -36,11 +36,11 @@ This flow should control the direction of the application, and it should be call
 %output application/csv header=true
 ---
 payload map {
-	Email : $.Email when ($.Email != null) otherwise "",
-	IDInSalesforce : $.IDInSalesforce when ($.IDInSalesforce != null) otherwise "",
-	IDInMsDynamics : $.IDInMsDynamics when ($.IDInMsDynamics != null) otherwise "",
-	NameInSalesforce : $.ContactNameInSalesforce when ($.ContactNameInSalesforce != null) otherwise "",
-	NameInMsDynamics : $.ContactNameInMsDynamics when ($.ContactNameInMsDynamics != null) otherwise ""
+	Email : $.Email,
+	IDInSalesforce : $.IDInSalesforce,
+	IDInMsDynamics : $.IDInMsDynamics,
+	NameInSalesforce : $.ContactNameInSalesforce,
+	NameInMsDynamics : $.ContactNameInMsDynamics
 }]]></dw:set-payload>
         </dw:transform-message>
 
