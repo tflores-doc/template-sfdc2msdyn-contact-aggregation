@@ -1,11 +1,11 @@
 
 # Anypoint Template: MS Dynamics and Salesforce Contact Aggregation
 
-+ [License Agreement]
-+ [Use Case]
-+ [Considerations]
-	* [Salesforce Considerations]
-	* [Microsoft Dynamics CRM Considerations]
++ License Agreement
++ Use Case
++ Considerations
+	* Salesforce Considerations
+	* Microsoft Dynamics CRM Considerations
 
 
 # License Agreement 
@@ -13,7 +13,7 @@ Note that using this template is subject to the conditions of this [License Agre
 Please review the terms of the license before downloading and using this template. In short, you are allowed to use the template for free with CloudHub or as a trial in Anypoint Studio.
 
 # Use Case 
-As an admin I want to aggregate contacts from Salesforce and MS Dynamics instances and compare them to see which contacts can only be found in one of the two and which contacts are in both instances. 
+As an admin, I want to aggregate contacts from Salesforce and MS Dynamics instances and compare them to see which contacts can only be found in one of the two and which contacts are in both instances. 
 
 This template generates its result as a CSV report, which is sent by email.
 
@@ -89,7 +89,7 @@ To trigger the use case, browse to the URL of the host and port you configured i
 
 
 ### Where to Download Anypoint Studio 
-First thing to know if you are a newcomer to Mule is where to get the tools.
+The first thing to know if you are a newcomer to Mule is where to get the tools.
 
 + You can download Anypoint Studio from this [Location](https://www.mulesoft.com/platform/studio)
 + You can download Mule runtime from this [Location](https://docs.mulesoft.com/mule4-user-guide/v/4.1/runtime-installation-task)
@@ -108,7 +108,7 @@ For more information, see [Importing and Exporting Projects](https://docs.muleso
 Once you have imported you Anypoint Template into Anypoint Studio you need to follow these steps to run it:
 
 + Locate the properties file `mule.dev.properties`, in src/main/resources
-+ Complete all the properties required as per the examples in the section [Properties to be configured]
++ Complete all the properties required as per the examples in the section Properties to be configured
 + Once that is done, right click on you Anypoint Template project folder 
 + Hover you mouse over `"Run as"`
 + Click on  `"Mule Application (configure)"`
@@ -117,7 +117,7 @@ Once you have imported you Anypoint Template into Anypoint Studio you need to fo
 
 
 ### Running on Mule Runtime Standalone 
-Complete all properties in one of the property files, for example in [mule.prod.properties] (../master/src/main/resources/mule.prod.properties) and run your app with the corresponding environment variable to use it. To follow the example, this will be `mule.env=prod`. 
+Complete all properties in one of the property files, and run your app with the corresponding environment variable to use it.
 
 
 ## Running on CloudHub 
@@ -168,10 +168,10 @@ This brief guide intends to give a high level idea of how this Anypoint Template
 More files are available such as test cases and Mule application files. To keep the template simple, we focus on the XML.
 Here is a list of the main XML files you'll find in this application:
 
-* [config.xml]
-* [endpoints.xml]
-* [businessLogic.xml]
-* [errorHandling.xml]
+* config.xml
+* endpoints.xml
+* businessLogic.xml
+* errorHandling.xml
 
 
 ## config.xml
@@ -181,7 +181,7 @@ In the visual editor they can be found on the *Global Element* tab.
 
 
 ## businessLogic.xml
-Functional aspect of the Template is implemented on this XML, directed by one flow responsible of conducting the aggregation of data, comparing records and finally formatting the output, in this case being a report.
+Functional aspect of the Template is implemented on this XML, directed by one flow responsible for conducting the aggregation of data, comparing records and finally formatting the output, in this case being a report.
         
 Using Scatter-Gather component we are querying the data in different systems. After that the aggregation is implemented in DataWeave 2 script using Transform component.
 Aggregated results are sorted by source of existence:
@@ -190,7 +190,7 @@ Aggregated results are sorted by source of existence:
 2. Accounts only in MS Dynamics
 3. Accounts in both Salesforce and MS Dynamics
 
-and transformed to CSV format. Final report in CSV format is sent to email, that you configured in mule.\*.properties file.
+and transformed to CSV format. A final report in CSV format is sent to email, that you configured in the mule.\*.properties file.
 
 
 
